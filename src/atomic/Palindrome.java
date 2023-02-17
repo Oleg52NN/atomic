@@ -1,14 +1,14 @@
 package atomic;
 
 import static atomic.Main.*;
-import static atomic.methods.Methods.adder;
-import static atomic.methods.Methods.similar;
+import static atomic.methods.Methods.*;
 
-public class Similar extends Thread {
+public class Palindrome extends Thread {
+
     @Override
     public void run() {
         for (int i = 0; i < texts.length; i++) {
-            if (similar(texts[i])) {
+            if (palindrome(texts[i]) && !similar(texts[i])) {
                 adder(texts[i].length());
             }
         }
